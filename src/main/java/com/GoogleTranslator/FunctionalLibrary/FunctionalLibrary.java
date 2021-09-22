@@ -1,3 +1,5 @@
+//Author: Manikandan K.
+
 package com.GoogleTranslator.FunctionalLibrary;
 
 import java.util.NoSuchElementException;
