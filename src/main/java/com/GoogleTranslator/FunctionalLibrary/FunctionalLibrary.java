@@ -26,6 +26,7 @@ public class FunctionalLibrary {
 
 	public void clickUsingJS(WebElement we) throws Exception {
 		try {
+			System.out.println();
 			if (we != null) {
 				((JavascriptExecutor) driver).executeScript("aruguments[0].click();", we);
 			}
