@@ -26,16 +26,7 @@ public class FunctionalLibrary {
 	}
 
 
-	public void clickUsingJS(WebElement we) throws Exception {
-		try {
-			
-			if (we != null) {
-				((JavascriptExecutor) driver).executeScript("aruguments[0].click();", we);
-			}
-		} catch (Exception e) {
 
-		}
-	}
 	protected void setText(WebElement element,String value)throws InterruptedException{
 		try{
 			if(isDisplayed(element)){

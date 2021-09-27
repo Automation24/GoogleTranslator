@@ -23,7 +23,7 @@ public class ExcelComplete {
 		ArrayList<HashMap<String, String>> arrMap = new ArrayList<HashMap<String, String>>();
 		FileInputStream fis = new FileInputStream(excelFile);
 		 XSSFWorkbook wb = new XSSFWorkbook(fis);
-//		HSSFWorkbook wb = new HSSFWorkbook(fis);
+
 		XSSFSheet sh = wb.getSheet(sheetName);
 		int rowCount = sh.getPhysicalNumberOfRows();
 		for (int i = 1; i < rowCount; i++) {
@@ -33,11 +33,8 @@ public class ExcelComplete {
 			for (int j = 0; j < colCount; j++) {
 				heading = sh.getRow(0).getCell(j).getStringCellValue();
 				Cell cel = row.getCell(j);
-				switch (cel.getCellTypeEnum()) {
-				case STRING:
-					key = cel.getStringCellValue();
-					break;
-				}
+				key = cel.getStringCellValue();
+				
 				hm.put(heading, key);
 			}
 			arrMap.add(hm);
@@ -63,11 +60,8 @@ public class ExcelComplete {
 				for (int j = 0; j <colCount; j++) {
 					heading = sh.getRow(0).getCell(j).getStringCellValue();
 					Cell cel = row.getCell(j);
-					switch (cel.getCellTypeEnum()) {
-					case STRING:
-						key = cel.getStringCellValue();
-						break;
-					}
+					key = cel.getStringCellValue();
+				
 					hm.put(heading, key);
 					if(heading.equals(excelColumName) && hm.get(excelTestData).equals(testData)) {
 						flag=true;
